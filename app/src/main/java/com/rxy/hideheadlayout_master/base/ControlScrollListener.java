@@ -21,13 +21,11 @@ public abstract class ControlScrollListener extends RecyclerView.OnScrollListene
         L.e("onScrolled---------------->"+dy,true);
         //向下滚动
         if (scrollDistance > HIDE_DISTANCE && isToVisible) {
-            L.e("scrollDistance=downdown" + scrollDistance, true);
             onHide();
             isToVisible = false;
             scrollDistance = 0;
         }//向上滚动
         else if (scrollDistance < -HIDE_DISTANCE && !isToVisible) {
-            L.e("scrollDistance=upupupup" + scrollDistance, true);
             onShow();
             isToVisible = true;
             scrollDistance = 0;
